@@ -71,15 +71,37 @@ document.addEventListener("DOMContentLoaded", function () {
         );
       });
 
+      const isAuthPage =
+        window.location.pathname.includes("SignIn") ||
+        window.location.pathname.includes("SingUp");
+
+      if (!isAuthPage) {
+        // مقداردهی اولیه اسلایدر فقط اگر صفحه SignIn نباشد
+        const swiper = new Swiper(".swiper-container", {
+          slidesPerView: 1,
+          spaceBetween: 10,
+          loop: true,
+          autoplay: {
+            delay: 3000,
+          },
+        });
+      } else {
+        // مخفی کردن اسلایدر در صفحه SignIn
+        let swiperContainer = document.querySelector(".swiper-container");
+        if (swiperContainer) {
+          swiperContainer.style.display = "none";
+        }
+      }
+
       // اسلایدر هیرو
-      const swiper = new Swiper(".swiper-container", {
-        slidesPerView: 1,
-        spaceBetween: 10,
-        loop: true,
-        autoplay: {
-          delay: 3000,
-        },
-      });
+      // const swiper = new Swiper(".swiper-container", {
+      //   slidesPerView: 1,
+      //   spaceBetween: 10,
+      //   loop: true,
+      //   autoplay: {
+      //     delay: 3000,
+      //   },
+      // });
       // اسلایدر هیرو
 
       bufferZone.addEventListener("mouseenter", function () {
