@@ -73,7 +73,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
       const isAuthPage =
         window.location.pathname.includes("SignIn") ||
-        window.location.pathname.includes("SingUp");
+        window.location.pathname.includes("SingUp") ||
+        window.location.pathname.includes("PanelUser") ||
+        window.location.pathname.includes("About") ||
+        window.location.pathname.includes("404");
 
       if (!isAuthPage) {
         // مقداردهی اولیه اسلایدر فقط اگر صفحه SignIn نباشد
