@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "react-scripts build",
-    "dev": "react-scripts start"
+    "build": "tailwindcss -i ./src/input.css -o ./dist/output.css"
   },
   "keywords": [],
   "author": "",
